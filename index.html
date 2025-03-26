@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakilon Ferreira - Especialista em Tráfego Pago</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --amarelo: #FFD700;
+            --amarelo-escuro: #FFC000;
+            --preto: #000000;
+            --branco: #FFFFFF;
+            --cinza: #F5F5F5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--cinza);
+            color: var(--preto);
+            line-height: 1.6;
+        }
+        
+        /* Header Fixo */
+        .header-fixo {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--amarelo);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            text-align: center;
+        }
+        
+        .cta-button {
+            background-color: var(--preto);
+            color: var(--amarelo);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s;
+            border: 2px solid var(--preto);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--amarelo);
+            color: var(--preto);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 150px 20px 80px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--amarelo), var(--amarelo-escuro));
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Serviços */
+        .servicos {
+            padding: 80px 20px;
+            background-color: var(--branco);
+        }
+        
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .servico-card {
+            background-color: var(--cinza);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .servico-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .servico-card h3 {
+            color: var(--amarelo-escuro);
+            margin-bottom: 15px;
+        }
+        
+        /* Formulário */
+        .form-section {
+            padding: 80px 20px;
+            background-color: var(--amarelo);
+            text-align: center;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--branco);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-container h2 {
+            margin-bottom: 30px;
+            color: var(--preto);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .submit-btn {
+            background-color: var(--preto);
+            color: var(--amarelo);
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: #333;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-decoration: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-info {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: var(--branco);
+            font-size: 24px;
+            margin: 0 10px;
+        }
+        
+        .cnpj {
+            font-size: 14px;
+            margin-top: 20px;
+            color: #aaa;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding-top: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Fixo com CTA -->
+    <div class="header-fixo">
+        <a href="#consulta" class="cta-button">AGENDE SUA CONSULTORIA GRATUITA</a>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Transforme Seu Negócio com Tráfego Pago de Alta Conversão</h1>
+        <p>Estratégias comprovadas para alavancar suas vendas online e aumentar sua visibilidade</p>
+        <a href="https://wa.me/5545991472077" class="cta-button" style="margin-top: 20px;">
+            <i class="fab fa-whatsapp"></i> Fale Direto Comigo
+        </a>
+    </section>
+    
+    <!-- Serviços -->
+    <section class="servicos">
+        <div class="servicos-grid">
+            <div class="servico-card">
+                <h3>Trafego Pago em Todas as Plataformas</h3>
+                <p>Anúncios estratégicos no Facebook Ads, Google Ads, Instagram e TikTok para levar clientes qualificados até você.</p>
+            </div>
+            
+            <div class="servico-card">
+                <h3>Vendas Online</h3>
+                <p>Sistemas de vendas automatizadas que convertem visitantes em clientes, 24 horas por dia.</p>
+            </div>
+            
+            <div class="servico-card">
+                <h3>Tráfego Local</h3>
+                <p>Atraia clientes da sua região com anúncios geo-direcionados para negócios físicos.</p>
+            </div>
+            
+            <div class="servico-card">
+                <h3>Venda Direta</h3>
+                <p>Estratégias agressivas de vendas com follow-up automatizado e alta conversão.</p>
+            </div>
+            
+            <div class="servico-card">
+                <h3>Alcance e Visibilidade</h3>
+                <p>Posicione sua marca como autoridade no seu nicho e seja encontrado pelos seus clientes ideais.</p>
+            </div>
+            
+            <div class="servico-card">
+                <h3>Gestão Completa</h3>
+                <p>Desde a criação da campanha até o acompanhamento dos resultados, tudo sob medida para seu negócio.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Formulário de Consultoria -->
+    <section class="form-section" id="consulta">
+        <div class="form-container">
+            <h2>Agende Sua Consultoria Gratuita</h2>
+            <form id="consultoriaForm" action="https://formsubmit.co/wakilonferreira12000@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+                
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefone">WhatsApp</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="negocio">Sobre Seu Negócio</label>
+                    <textarea id="negocio" name="negocio" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="objetivo">Principal Objetivo</label>
+                    <select id="objetivo" name="objetivo" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="vendas">Aumentar Vendas</option>
+                        <option value="visibilidade">Aumentar Visibilidade</option>
+                        <option value="leads">Gerar Mais Leads</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-btn">AGENDAR CONSULTORIA</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5545991472077" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-info">
+            <h3>Wakilon Ferreira</h3>
+            <p>Especialista em Tráfego Pago e Vendas Online</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            
+            <p><i class="fas fa-phone"></i> (45) 99147-2077</p>
+            <p><i class="fas fa-map-marker-alt"></i> Medianeira - PR</p>
+            
+            <div class="cnpj">
+                CNPJ: 52.563.390/0001-01
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script>
+        // Google Tag Manager (substitua pelo seu código)
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-SEUCODIGO');
+        
+        // Facebook Pixel (substitua pelo seu código)
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'SEU_PIXEL_ID');
+        fbq('track', 'PageView');
+        
+        // Google Analytics (substitua pelo seu código)
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SEUCODIGO');
+    </script>
+</body>
+</html>
